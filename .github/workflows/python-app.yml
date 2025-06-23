@@ -30,13 +30,13 @@ jobs:
 
   deploy:
     needs: test
-    runs-on: self-hosted  # Matches the runner label
+    runs-on: self-hosted
     steps:
-      - name: Deploy
-        run: |
-          cd /home/kishan/githubaction
-          git pull origin main
-          sudo systemctl restart your-app-service
+      - name: Check out repo
+        uses: actions/checkout@v2
+  
+      
+
            
     
 
