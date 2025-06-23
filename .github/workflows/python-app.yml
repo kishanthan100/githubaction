@@ -29,6 +29,7 @@ jobs:
         run: pytest
 
   deploy:
+    needs: test
     runs-on: self-hosted  # Matches the runner label
     steps:
       - name: Deploy
