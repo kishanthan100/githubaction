@@ -29,24 +29,13 @@ jobs:
         run: pytest
 
   deploy:
-    needs: test  # Wait for tests to pass
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Matches the runner label
     steps:
-      - name: Check out code
-        uses: actions/checkout@v2
-
-      - name: Deploy to Ubuntu via SSH
-        uses: appleboy/ssh-action@master
-        with:
-          host: 192.168.68.61
-          username: kishan  # Replace with your server username
-          key: ${{ secrets.SSH_PRIVATE_KEY }}  # Store your SSH key in GitHub Secrets
-          script: |
-            cd /home/kishan/githubaction || exit 1
-            git fetch origin
-            git reset --hard origin/main  # Force sync with remote
-            sudo systemctl restart your-app-service  # Only if applicable
-            
+      - name: Deploy
+        run: |
+          cd /home/kishan/githubaction
+          git pull origin main
+          sudo systemctl restart your-app-service
            
     
 
