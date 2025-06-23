@@ -38,7 +38,7 @@ jobs:
       - name: Deploy to Ubuntu via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: 192.168.68.68
+          host: 192.168.68.61
           username: kishan  # Replace with your server username
           key: ${{ secrets.SSH_PRIVATE_KEY }}  # Store your SSH key in GitHub Secrets
           script: |
