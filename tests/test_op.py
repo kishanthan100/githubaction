@@ -5,3 +5,4 @@ def test_add():
 def test_sun():
     assert sub(6,2)==4
     assert sub(3,5)==-2
+    assert sub(2,5)==-3
