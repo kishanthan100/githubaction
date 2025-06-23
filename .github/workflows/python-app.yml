@@ -11,7 +11,7 @@ on:
         
 jobs:
     test:
-        runs-on: ununtu-latest
+        runs-on: ubuntu-latest
 
         steps:
             # checkout the code from repository
