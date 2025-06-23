@@ -9,3 +9,4 @@ def test_sun():
     assert sub(2,5)==-3
 def test_mul():
     assert mul(5,5)==25
+    assert mul(7,5)==35
